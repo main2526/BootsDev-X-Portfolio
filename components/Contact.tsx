@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import {
   FaLinkedinIn,
@@ -14,7 +15,6 @@ interface FormData {
   subject: string;
   message: string;
 }
-
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     empresa: "",
@@ -24,6 +24,8 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const t = useTranslations("ContactMe");
+  const tContact = useTranslations("Con");
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -56,7 +58,7 @@ export default function Contact() {
       if (!res.ok) throw new Error(data.error || "Error al enviar el mensaje.");
 
       setSubmitMessage(
-        "✅ ¡Mensaje enviado exitosamente! Te responderé pronto."
+        "✅ Message sent successfully! I will respond to you soon."
       );
       setFormData({ empresa: "", email: "", subject: "", message: "" });
 
@@ -71,13 +73,13 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: FaLinkedinIn,
-      title: "LinkedIn Profesional",
+      title: "LinkedIn",
       link: "https://www.linkedin.com/in/bootsx",
       bgColor: "bg-blue-600",
     },
     {
       icon: FaGithub,
-      title: "Repositorio GitHub",
+      title: "GitHub",
       link: "https://github.com/main2526",
       bgColor: "bg-gray-800",
     },
@@ -92,16 +94,13 @@ export default function Contact() {
   return (
     <section className="section mb-16">
       <h2 className="section-title text-3xl font-bold mb-8 text-slate-800 text-center relative pb-4 font-serif">
-        Información de Contacto
+        {tContact("v")}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-yellow-500"></div>
       </h2>
 
       <div className="grid lg:grid-cols-2 gap-12 mt-8">
         {/* Información de Contacto */}
         <div>
-          <h3 className="text-2xl font-bold text-slate-800 mb-6 font-serif">
-            Conectemos
-          </h3>
           <div className="contact-grid grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
             {contactInfo.map((contact, index) => (
               <a
@@ -119,7 +118,7 @@ export default function Contact() {
 
                 <div className="contact-info">
                   <h4 className="font-bold text-slate-800 mb-1 text-lg tracking-wide font-serif">
-                    {contact.title}
+                    {t(contact.title)}
                   </h4>
                 </div>
               </a>
@@ -130,7 +129,7 @@ export default function Contact() {
         {/* Formulario de Contacto */}
         <div>
           <h3 className="text-2xl font-bold text-slate-800 mb-6 font-serif">
-            Envíame un Mensaje
+            {t("SendMe")}
           </h3>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
@@ -139,7 +138,7 @@ export default function Contact() {
                   htmlFor="empresa"
                   className="block text-sm font-semibold text-slate-700 mb-2 tracking-wide"
                 >
-                  Nombre Completo
+                  {t("Name")}
                 </label>
                 <input
                   type="text"
@@ -149,7 +148,7 @@ export default function Contact() {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border-2 border-gray-200 focus:border-yellow-500 focus:outline-none transition-colors duration-300 text-slate-800"
-                  placeholder="Tu nombre"
+                  placeholder={`${t("YourName")}`}
                 />
               </div>
               <div>
@@ -157,7 +156,7 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-sm font-semibold text-slate-700 mb-2 tracking-wide"
                 >
-                  Correo Electrónico
+                  Email
                 </label>
                 <input
                   type="email"
@@ -167,7 +166,7 @@ export default function Contact() {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border-2 border-gray-200 focus:border-yellow-500 focus:outline-none transition-colors duration-300 text-slate-800"
-                  placeholder="tu@email.com"
+                  placeholder={t("YourEmail")}
                 />
               </div>
             </div>
@@ -177,7 +176,7 @@ export default function Contact() {
                 htmlFor="subject"
                 className="block text-sm font-semibold text-slate-700 mb-2 tracking-wide"
               >
-                Asunto
+                {t("Subject")}
               </label>
               <input
                 type="text"
@@ -187,7 +186,7 @@ export default function Contact() {
                 onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 border-2 border-gray-200 focus:border-yellow-500 focus:outline-none transition-colors duration-300 text-slate-800"
-                placeholder="Asunto del mensaje"
+                placeholder={`${t("SubjectInput")}`}
               />
             </div>
 
@@ -196,7 +195,7 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-sm font-semibold text-slate-700 mb-2 tracking-wide"
               >
-                Mensaje
+                {t("Message")}
               </label>
               <textarea
                 id="message"
@@ -206,7 +205,7 @@ export default function Contact() {
                 required
                 rows={6}
                 className="w-full px-4 py-3 border-2 border-gray-200 focus:border-yellow-500 focus:outline-none transition-colors duration-300 text-slate-800 resize-none"
-                placeholder="Escribe tu mensaje aquí..."
+                placeholder={`${t("MessageInput")}`}
               />
             </div>
 
@@ -218,12 +217,12 @@ export default function Contact() {
               {isSubmitting ? (
                 <>
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                  Enviando...
+                  {t("SendIngMessage")}
                 </>
               ) : (
                 <>
                   <FaPaperPlane />
-                  Enviar Mensaje
+                  {t("SendMessage")}
                 </>
               )}
             </button>

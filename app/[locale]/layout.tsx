@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lora } from "next/font/google";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import "./globals.css";
-
+import "../globals.css";
+import { NextIntlClientProvider } from "next-intl";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     description: "Portfolio profesional de desarrollador Full Stack",
     type: "website",
   },
+  icons: "./icon.png",
 };
 
 export default function RootLayout({
@@ -37,8 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${lora.variable}`}>
       <body className={`${lora.className}  antialiased`}>
-        {children}
-        <ScrollToTopButton />
+        <NextIntlClientProvider>
+          {children}
+          <ScrollToTopButton />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

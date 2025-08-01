@@ -1,0 +1,66 @@
+{
+  "Profile": {
+    "Developer": "Full Stack Developer"
+  },
+
+  "AboutMe": {
+    "About": "About Me",
+    "text": "As a Full Stack Developer with a strong background in software engineering, I am dedicated to building elegant digital solutions that combine robust functionality with intuitive design. I have over three years of experience developing modern web applications, where I have cultivated a deep understanding of best practices in software architecture and results-driven development.",
+
+    "pros": "Clean code is simple and direct. It reads like well-written prose."
+  },
+
+  "Skills": {
+    "title": "Technical Competencies",
+    "all": "All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tool": "Tools"
+  },
+
+  "TitleP": {
+    "Pr": "Highlighted Projects"
+  },
+
+  "Projects": {
+    "swiftStake": {
+      "name": "Swift Stake",
+      "description": "Swift Stake is a fast and secure staking platform that enables users to participate in decentralized finance (DeFi) protocols. The project integrates real-time APIs to provide updated opportunities and rewards. With a focus on user experience and security, Swift Stake simplifies earning passive income through blockchain technology."
+    },
+
+    "landingTurtle": {
+      "name": "Landing Turtle",
+      "description": "Landing Turtle is an animated and visually engaging landing page created to showcase modern web design techniques. Utilizing Next.js, Tailwind CSS, and Framer Motion, the project demonstrates smooth animations, responsive layouts, and creative UI elements. It serves as a template for startups and personal portfolios seeking a memorable first impression."
+    },
+
+    "chatbotAI": {
+      "name": "Chatbot AI",
+      "description": "Chatbot AI is an intelligent conversational assistant powered by the DeepSeek API and Next.js. The chatbot can answer questions, provide recommendations, and automate tasks for users. With a focus on natural language understanding and a user-friendly interface, Chatbot AI brings the power of artificial intelligence to everyday interactions."
+    }
+  },
+
+  "Watch": {
+    "Preview": "Preview",
+    "Github": "Github "
+  },
+
+  "Con": {
+    "v": "Contact Information"
+  },
+
+  "ContactMe": {
+    "LinkedIn": "Professional LinkedIn",
+    "GitHub": "GitHub Repository",
+    "WhatsApp": "WhatsApp Bussines",
+    "SendMe": "Send Me a Message",
+    "Name": "Name",
+    "YourName": "Your Name",
+    "YourEmail": "your@email.com",
+    "Subject": "Subject",
+    "SubjectInput": "Subject of the message",
+    "Message": "Message",
+    "MessageInput": "Write your message here",
+    "SendMessage": "Send Message",
+    "SendIngMessage": "Sending..."
+  }
+}

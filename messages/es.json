@@ -1,0 +1,64 @@
+{
+  "Profile": {
+    "Developer": "Desarrollador Full Stack"
+  },
+
+  "AboutMe": {
+    "About": "Sobre Mí",
+    "text": "Como desarrollador Full Stack con una sólida formación en ingeniería de software, me dedico a crear soluciones digitales elegantes que combinan una funcionalidad robusta con un diseño intuitivo. Cuento con más de tres años de experiencia desarrollando aplicaciones web modernas, donde he cultivado un profundo entendimiento de las mejores prácticas en arquitectura de software y desarrollo orientado a resultados.",
+    "pros": "El código limpio es simple y directo. Se lee como una prosa bien escrita."
+  },
+
+  "Skills": {
+    "title": "Competencias Técnicas",
+    "all": "Todas",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tool": "Herramientas"
+  },
+
+  "TitleP": {
+    "Pr": "Proyectos Destacados"
+  },
+
+  "Projects": {
+    "swiftStake": {
+      "name": "Swift Stake",
+      "description": "Swift Stake es una plataforma de staking rápida y segura que permite a los usuarios participar en protocolos de finanzas descentralizadas (DeFi). El proyecto integra APIs en tiempo real para ofrecer oportunidades y recompensas actualizadas. Con un enfoque en la experiencia del usuario y la seguridad, Swift Stake simplifica la obtención de ingresos pasivos mediante tecnología blockchain."
+    },
+
+    "landingTurtle": {
+      "name": "Landing Turtle",
+      "description": "Landing Turtle es una página de aterrizaje animada y visualmente atractiva creada para mostrar técnicas modernas de diseño web. Utilizando Next.js, Tailwind CSS y Framer Motion, el proyecto demuestra animaciones suaves, diseños responsivos y elementos creativos de interfaz de usuario. Sirve como plantilla para startups y portafolios personales que buscan una primera impresión memorable."
+    },
+
+    "chatbotAI": {
+      "name": "Chatbot AI",
+      "description": "Chatbot AI es un asistente conversacional inteligente impulsado por la API DeepSeek y Next.js. El chatbot puede responder preguntas, proporcionar recomendaciones y automatizar tareas para los usuarios. Con un enfoque en la comprensión del lenguaje natural y una interfaz fácil de usar, Chatbot AI lleva el poder de la inteligencia artificial a las interacciones cotidianas."
+    }
+  },
+
+  "Watch": {
+    "Preview": "Demostración",
+    "Github": "Github Project"
+  },
+
+  "Con": {
+    "v": "Información de Contacto"
+  },
+
+  "ContactMe": {
+    "LinkedIn": "LinkedIn Profesional",
+    "GitHub": "Repositorio en GitHub",
+    "WhatsApp": "WhatsApp Negocios",
+    "Name": "Nombre",
+    "SendMe": "Envíame un mensaje",
+    "YourName": "Tu nombre",
+    "YourEmail": "tu@email.com",
+    "Subject": "Asunto",
+    "SubjectInput": "Asunto del mensaje",
+    "Message": "Mensaje",
+    "MessageInput": "Escribe tu mensaje aquí",
+    "SendMessage": "Enviar mensaje"
+  }
+}

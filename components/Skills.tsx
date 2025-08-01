@@ -18,33 +18,89 @@ import {
   SiTailwindcss,
   SiPrisma,
 } from "react-icons/si";
+import { useTranslations } from "next-intl";
 
 const allSkills = [
-  { name: "JavaScript", icon: FaJs, color: "text-yellow-400", category: "frontend" },
-  { name: "TypeScript", icon: SiTypescript, color: "text-blue-600", category: "frontend" },
-  { name: "React", icon: FaReact, color: "text-cyan-400", category: "frontend" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-black", category: "frontend" },
-  { name: "HTML5", icon: FaHtml5, color: "text-orange-600", category: "frontend" },
-  { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500", category: "frontend" },
-  { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-500", category: "frontend" },
-  { name: "Node.js", icon: FaNodeJs, color: "text-green-600", category: "backend" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-700", category: "backend" },
+  {
+    name: "JavaScript",
+    icon: FaJs,
+    color: "text-yellow-400",
+    category: "frontend",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "text-blue-600",
+    category: "frontend",
+  },
+  {
+    name: "React",
+    icon: FaReact,
+    color: "text-cyan-400",
+    category: "frontend",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "text-black",
+    category: "frontend",
+  },
+  {
+    name: "HTML5",
+    icon: FaHtml5,
+    color: "text-orange-600",
+    category: "frontend",
+  },
+  {
+    name: "CSS3",
+    icon: FaCss3Alt,
+    color: "text-blue-500",
+    category: "frontend",
+  },
+  {
+    name: "Tailwind",
+    icon: SiTailwindcss,
+    color: "text-cyan-500",
+    category: "frontend",
+  },
+  {
+    name: "Node.js",
+    icon: FaNodeJs,
+    color: "text-green-600",
+    category: "backend",
+  },
+  {
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "text-blue-700",
+    category: "backend",
+  },
   { name: "MySQL", icon: SiMysql, color: "text-blue-800", category: "backend" },
-  { name: "Prisma", icon: SiPrisma, color: "text-slate-700", category: "backend" },
+  {
+    name: "Prisma",
+    icon: SiPrisma,
+    color: "text-slate-700",
+    category: "backend",
+  },
   { name: "Git", icon: FaGitAlt, color: "text-orange-500", category: "tool" },
   { name: "GitHub", icon: FaGithub, color: "text-black", category: "tool" },
-  { name: "Unity Engine", icon: FaUnity, color: "text-slate-700", category: "tool" },
+  {
+    name: "Unity Engine",
+    icon: FaUnity,
+    color: "text-slate-700",
+    category: "tool",
+  },
 ];
 
 const filters = [
-  { label: "Todas", value: "all" },
-  { label: "Frontend", value: "frontend" },
-  { label: "Backend", value: "backend" },
-  { label: "Herramientas", value: "tool" },
+  { value: "all" },
+  { value: "frontend" },
+  { value: "backend" },
+  { value: "tool" },
 ];
-
 export default function Skills() {
   const [selected, setSelected] = useState("all");
+  const t = useTranslations("Skills");
 
   const filteredSkills =
     selected === "all"
@@ -54,7 +110,7 @@ export default function Skills() {
   return (
     <section className="section mb-16">
       <h2 className="section-title text-3xl font-bold mb-8 text-slate-800 text-center relative pb-4 font-serif">
-        Competencias Técnicas
+        {t("title")}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-yellow-500"></div>
       </h2>
 
@@ -70,7 +126,7 @@ export default function Skills() {
                 : "border-gray-300 text-slate-700 hover:border-yellow-500"
             }`}
           >
-            {filter.label}
+            {t(filter.value)}
           </button>
         ))}
       </div>
