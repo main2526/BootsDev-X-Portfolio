@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lora } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-});
 
-const lora = Lora({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-lora",
+  weight: "500",
   display: "swap",
 });
 
@@ -36,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lora.variable}`}>
-      <body className={`${lora.className}  antialiased`}>
+    <html lang="en">
+      <body className={`${montserrat.className}  antialiased`}>
         <NextIntlClientProvider>
           {children}
           <ScrollToTopButton />
